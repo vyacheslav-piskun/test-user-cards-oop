@@ -3,6 +3,13 @@ export default class UI {
 		const app = document.getElementById('cards-list');
 		app.innerHTML = '';
 
+		if (users.length === 0) {
+			const noItemsMessage = document.createElement('h2');
+			noItemsMessage.textContent = 'NO ITEMS';
+			app.appendChild(noItemsMessage);
+			return;
+		}
+
 		users.forEach(user => {
 			const userCard = document.createElement('div');
 			userCard.classList.add('user-card');
