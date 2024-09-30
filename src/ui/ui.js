@@ -4,8 +4,16 @@ export default class UI {
 		app.innerHTML = '';
 
 		users.forEach(user => {
-			const userCard = document.createElement('pre');
-			userCard.innerHTML = JSON.stringify(user, null, 2);
+			const userCard = document.createElement('div');
+			userCard.classList.add('user-card');
+			userCard.innerHTML = `
+        <h2>${user.name} (@${user.username})</h2>
+        <p>Email: ${user.email}</p>
+        <p>Address: ${user.address.street}, ${user.address.city}</p>
+        <p>Phone: ${user.phone}</p>
+        <p>Website: <a href="http://${user.website}" target="_blank">${user.website}</a></p>
+        <p>Company: ${user.company.name}</p>
+      `;
 			app.appendChild(userCard);
 		});
 	}

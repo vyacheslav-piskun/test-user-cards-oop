@@ -1,10 +1,11 @@
 :root {
     --c-snow: #fff;
-    --c-bg-primary: #f4f4f4;
+    --c-bg-primary: #d4d4d4;
     --c-soot: #181818;
+    --c-soot-light: #999;
 }
 
-html, body, h1, p, header, main, footer, div {
+html, body, h1, h2, p, header, main, footer, div {
     box-sizing: border-box;
 }
 
@@ -33,6 +34,23 @@ html, body {
 .headline, footer {
     text-align: center;
     text-transform: uppercase;
+}
+
+.footer {
+    padding: 2rem;
+}
+
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.user-card {
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0.2rem 0.2rem 0.8rem var(--c-soot-light);
+    background-color: var(--c-snow);
 }
 
 @media (min-width: 460px) {
