@@ -8,6 +8,7 @@ export default class UserService {
 			return data.map(user => new User(user));
 		} catch (error) {
 			console.error('Error fetching users:', error);
+			return [];
 		}
 	}
 }
