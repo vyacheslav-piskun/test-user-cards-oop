@@ -1,14 +1,13 @@
 import UI from "./ui/ui";
+
 import UserService from "./services/userService";
-import FilterManager from "./filters/filterManager";
-import BaseFilter from "./filters/baseFilter";
+import FilterService from "./services/filterService";
 
 export default class App {
 	static async init() {
 		const users = await UserService.fetchUsers();
 
-		const filterManager = new FilterManager();
-		filterManager.addFilter(new BaseFilter());
+		const filterManager = FilterService.createFilterManager();
 
 		const filterSelect = document.getElementById('filterSelect');
 		const filterInput = document.getElementById('filterInput');
