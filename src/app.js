@@ -1,5 +1,9 @@
+import UserService from "./services/userService";
+import UI from "./ui/ui";
+
 export default class App {
-	static init() {
-		console.log('success');
+	static async init() {
+		const users = await UserService.fetchUsers();
+		UI.renderUsers(users);
 	}
 }
