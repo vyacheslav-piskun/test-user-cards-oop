@@ -1,7 +1,7 @@
 :root {
     --c-snow: #fff;
-    --c-bg-primary: #d4d4d4;
-    --c-soot: #181818;
+    --c-bg-primary: rgba(223, 219, 209, 1);
+    --c-soot: rgba(70, 58, 43, 1);
     --c-soot-light: #999;
 
     --tr-small: 0.3s;
@@ -13,6 +13,8 @@ html, body, h1, h2, p, header, main, footer, div, select, input {
 
 input, select {
     font: inherit;
+    border: 1px solid var(--c-soot);
+    border-radius: 0.6rem;
 }
 
 label {
@@ -98,8 +100,13 @@ html, body {
 }
 
 .filters-item__input {
+    opacity: 0.75;
     height: 3rem;
     padding: 0.5rem;
+}
+
+.filters-item__input:focus {
+    opacity: 1;
 }
 
 .filters-item__input--search {
