@@ -112,7 +112,7 @@ html, body {
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 640px) {
     html, body {
         font-size: 12px;
     }
