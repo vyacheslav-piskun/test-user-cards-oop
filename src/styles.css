@@ -3,10 +3,20 @@
     --c-bg-primary: #d4d4d4;
     --c-soot: #181818;
     --c-soot-light: #999;
+
+    --tr-small: 0.3s;
 }
 
-html, body, h1, h2, p, header, main, footer, div {
+html, body, h1, h2, p, header, main, footer, div, select, input {
     box-sizing: border-box;
+}
+
+input, select {
+    font: inherit;
+}
+
+label {
+    cursor: pointer;
 }
 
 html, body {
@@ -21,6 +31,7 @@ html, body {
 
 .wrapper {
     height: 100%;
+    width: 100%;
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
@@ -29,6 +40,7 @@ html, body {
 
 .main {
     flex-grow: 1;
+    margin: 0 auto;
 }
 
 .headline, footer {
@@ -51,6 +63,43 @@ html, body {
     border-radius: 1.2rem;
     box-shadow: 0.2rem 0.2rem 0.8rem var(--c-soot-light);
     background-color: var(--c-snow);
+    transition: transform var(--tr-small);
+}
+
+@media (hover: hover) {
+    .user-card:hover {
+        transform: scale(1.05);
+        transform-origin: center;
+    }
+}
+
+.filters-block {
+    margin-bottom: 1.2rem;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.filters-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters-item:last-child {
+    flex-grow: 1;
+}
+
+.filters-item__label {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.filters-item__input {
+    height: 3rem;
+    padding: 0.5rem;
+}
+
+.filters-item__input--search {
+    width: 100%;
 }
 
 @media (min-width: 375px) {
@@ -68,14 +117,14 @@ html, body {
         padding: 2.4rem;
     }
 
-    .headline {
-        margin-bottom: 4rem;
-    }
-
     .cards-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem
+    }
+
+    .main {
+        max-width: 60rem;
     }
 }
 
@@ -85,13 +134,9 @@ html, body {
     }
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1280px) {
     html, body {
         font-size: 14px;
-    }
-
-    .headline {
-        margin-bottom: 4rem;
     }
 
     .cards-list {
@@ -100,5 +145,9 @@ html, body {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2.4rem
+    }
+
+    .main {
+        max-width: 100rem;
     }
 }
