@@ -3,19 +3,6 @@ export default class UI {
 		const app = document.getElementById('cards-list');
 		app.innerHTML = '';
 
-		const filterSelect = document.getElementById('filterSelect');
-		const filterInput = document.getElementById('filterInput');
-
-		const toggleInputVisibility = () => {
-			filterInput.disabled = filterSelect.value === 'default';
-		};
-
-		filterSelect.addEventListener('change', () => {
-			toggleInputVisibility();
-		});
-
-		toggleInputVisibility();
-
 		users.forEach(user => {
 			const userCard = document.createElement('div');
 			userCard.classList.add('user-card');
