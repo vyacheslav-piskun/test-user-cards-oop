@@ -53,20 +53,52 @@ html, body {
     background-color: var(--c-snow);
 }
 
-@media (min-width: 460px) {
+@media (min-width: 375px) {
     html, body {
         font-size: 11px;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
     html, body {
         font-size: 12px;
     }
+
+    .wrapper {
+        padding: 2.4rem;
+    }
+
+    .headline {
+        margin-bottom: 4rem;
+    }
+
+    .cards-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem
+    }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1024px) {
     html, body {
         font-size: 13px;
+    }
+}
+
+@media (min-width: 1366px) {
+    html, body {
+        font-size: 14px;
+    }
+
+    .headline {
+        margin-bottom: 4rem;
+    }
+
+    .cards-list {
+        max-width: 100rem;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4rem
     }
 }
