@@ -162,3 +162,7 @@ html, body {
         max-width: 100rem;
     }
 }
+
+.hidden {
+    display: none;
+}

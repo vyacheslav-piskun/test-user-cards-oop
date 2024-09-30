@@ -11,9 +11,14 @@ export default class App {
 
 		const filterSelect = document.getElementById('filterSelect');
 		const filterInput = document.getElementById('filterInput');
+		const filterInputBlock = document.getElementById('filterInputBlock')
 
 		const toggleInputVisibility = () => {
-			filterInput.disabled = filterSelect.value === 'default';
+			if (filterSelect.value === 'default') {
+				filterInputBlock.classList.add('hidden')
+			} else {
+				filterInputBlock.classList.remove('hidden')
+			}
 		};
 
 		const applyFilter = () => {
