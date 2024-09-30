@@ -32,6 +32,7 @@ export default class App {
 			toggleInputVisibility();
 			filterInput.value = '';
 			applyFilter();
+			filterInput.focus();
 		});
 
 		filterInput.addEventListener('input', applyFilter);

@@ -15,11 +15,13 @@ export default class UI {
 			userCard.classList.add('user-card');
 			userCard.innerHTML = `
         <h2>${user.name} (@${user.username})</h2>
-        <p>Email: ${user.email}</p>
-        <p>Address: ${user.address.street}, ${user.address.city}</p>
-        <p>Phone: ${user.phone}</p>
-        <p>Website: <a href="http://${user.website}" target="_blank">${user.website}</a></p>
-        <p>Company: ${user.company.name}</p>
+        <p><b>Email:</b> <a href="mailto:${user.website}" target="_blank">${user.email}</a></p>
+        <p><b>Address:</b> ${user.address.suite}, ${user.address.street}</p>
+        <p><b>City:</b>  ${user.address.city}</p>
+        <p><b>ZIP:</b>  ${user.address.zipcode}</p>
+        <p><b>Phone:</b> <a href="tel:${user.phone}" target="_blank">${user.phone}</a></p>
+        <p><b>Website:</b> <a href="http://${user.website}" target="_blank">${user.website}</a></p>
+        <p><b>Company:</b> ${user.company.name}</p>
       `;
 			app.appendChild(userCard);
 		});
