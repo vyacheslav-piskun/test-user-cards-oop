@@ -1,10 +1,19 @@
-import BaseFilter from '../filters/baseFilter';
-import FilterManager from '../filters/filterManager';
-
 export default class FilterService {
-	static createFilterManager() {
-		const filterManager = new FilterManager();
-		filterManager.addFilter(new BaseFilter());
-		return filterManager;
+	static applyFilter(users, filterKey, filterValue) {
+		if (!filterKey || filterKey === 'default' || !filterValue) {
+			return users;
+		}
+
+		return users.filter(user => {
+			const keys = filterKey.split('.');
+			let value = user;
+
+			for (const key of keys) {
+				if (!value) return false;
+				value = value[key];
+			}
+
+			return value && value.toString().toLowerCase().includes(filterValue);
+		});
 	}
 }

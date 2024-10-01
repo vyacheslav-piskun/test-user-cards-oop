@@ -7,8 +7,6 @@ export default class App {
 	static async init() {
 		const users = await UserService.fetchUsers();
 
-		const filterManager = FilterService.createFilterManager();
-
 		const filterSelect = document.getElementById('filterSelect');
 		const filterInput = document.getElementById('filterInput');
 		const filterInputBlock = document.getElementById('filterInputBlock')
@@ -24,7 +22,7 @@ export default class App {
 		const applyFilter = () => {
 			const filterKey = filterSelect.value;
 			const filterValue = filterInput.value.toLowerCase();
-			const filteredUsers = filterManager.applyFilters(users, filterKey, filterValue);
+			const filteredUsers = FilterService.applyFilter(users, filterKey, filterValue);
 			UI.renderUsers(filteredUsers);
 		};
 
