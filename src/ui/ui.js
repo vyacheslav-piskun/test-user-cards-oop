@@ -26,4 +26,14 @@ export default class UI {
 			app.appendChild(userCard);
 		});
 	}
+
+	static populateCitiesSelect(cities) {
+		const citiesSelect = document.getElementById('citiesSelect');
+		cities.forEach(city => {
+			const option = document.createElement('option');
+			option.value = city;
+			option.textContent = city;
+			citiesSelect.appendChild(option);
+		});
+	}
 }

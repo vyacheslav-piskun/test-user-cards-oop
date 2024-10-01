@@ -2,6 +2,7 @@ import UI from "./ui/ui";
 
 import UserService from "./services/userService";
 import FilterService from "./services/filterService";
+import CitiesService from "./services/citiesService";
 
 export default class App {
 	static async init() {
@@ -9,7 +10,9 @@ export default class App {
 
 		const filterSelect = document.getElementById('filterSelect');
 		const filterInput = document.getElementById('filterInput');
-		const filterInputBlock = document.getElementById('filterInputBlock')
+		const filterInputBlock = document.getElementById('filterInputBlock');
+
+		const cities = CitiesService.getUniqueCities(users).sort((a, b) => a.localeCompare(b));
 
 		const toggleInputVisibility = () => {
 			if (filterSelect.value === 'default') {
@@ -37,6 +40,7 @@ export default class App {
 
 		toggleInputVisibility();
 
+		UI.populateCitiesSelect(cities);
 		UI.renderUsers(users);
 	}
 }
